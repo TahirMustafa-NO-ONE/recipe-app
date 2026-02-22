@@ -37,7 +37,16 @@ A beautiful and feature-rich Flutter recipe application that helps users discove
 
 ## 📱 Screenshots
 
-> Add your app screenshots here
+<div align="center">
+  <img src="moreat_recipe_book-main/assets/thumbnail-1.jpeg" alt="Recipe Detail Screen" width="250"/>
+  <img src="moreat_recipe_book-main/assets/thumbnail-2.jpeg" alt="Recipe List Screen" width="250"/>
+  <img src="moreat_recipe_book-main/assets/thumbnail-3.jpeg" alt="Home Screen" width="250"/>
+</div>
+
+### Features Showcase
+- **Recipe Detail**: View complete recipe information including ingredients, cooking time, nutritional scores, and more
+- **Recipe Lists**: Organize your recipes with tabs for All, Favorite, Planned, and Cooking
+- **Browse & Search**: Discover recipes by category with beautiful card layouts
 
 ## 🚀 Getting Started
 
