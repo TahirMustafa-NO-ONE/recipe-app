@@ -1,4 +1,4 @@
-# 🍳 MoreAt Recipe Book
+# 🍳 Moreat Recipe Book
 
 A beautiful and feature-rich Flutter recipe application that helps users discover, save, and organize their favorite recipes. Built with Firebase integration for seamless authentication and data management.
 
