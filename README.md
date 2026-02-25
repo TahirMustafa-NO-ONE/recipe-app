@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/TahirMustafa-NO-ONE/recipe-app.git
-   cd recipe-app
+   cd recipe-app/moreat_recipe_book-main
    ```
 
 2. **Install dependencies**
@@ -71,26 +71,50 @@ Before you begin, ensure you have the following installed:
    flutter pub get
    ```
 
-3. **Firebase Setup**
-   
+3. **Set up API Keys (Required)**
+
+   This project uses `--dart-define` to keep secrets out of source code.
+
+   ```bash
+   # Copy the dart-define template
+   cp dart_defines/local.env.example dart_defines/local.env
+   ```
+
+   Then open `dart_defines/local.env` and fill in your real values:
+   ```
+   SPOONACULAR_API_KEY=your_actual_key_here
+   ```
+
+   Get a free Spoonacular API key at: https://spoonacular.com/food-api
+
+4. **Firebase Setup**
+
    - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
    - Add Android and iOS apps to your Firebase project
    - Download `google-services.json` (Android) and `GoogleService-Info.plist` (iOS)
    - Place the files in their respective directories:
      - Android: `android/app/google-services.json`
      - iOS: `ios/Runner/GoogleService-Info.plist`
+   - ⚠️ Both files are in `.gitignore` — never commit them!
    - Enable Authentication methods in Firebase Console (Email/Password, Google)
    - Set up Firestore Database
 
-4. **API Key Configuration**
-   
-   - Open `lib/API_key.dart`
-   - Add your recipe API credentials (if using external recipe API)
-
 5. **Run the app**
    ```bash
-   flutter run
+   # Development — loads secrets from dart_defines/local.env
+   flutter run --dart-define-from-file=dart_defines/local.env
+
+   # Or supply the key inline
+   flutter run --dart-define=SPOONACULAR_API_KEY=your_key_here
    ```
+
+6. **Build for release**
+   ```bash
+   flutter build apk --dart-define-from-file=dart_defines/local.env
+   flutter build ipa --dart-define-from-file=dart_defines/local.env
+   ```
+
+
 
 ## 🏗️ Project Structure
 

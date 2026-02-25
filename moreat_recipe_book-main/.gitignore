@@ -41,3 +41,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ============================================================
+# SECURITY: Environment Variables & Secrets
+# ============================================================
+# Local environment variable files (contain real secrets)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+# Keep .env.example committed — it has NO real secrets
+
+# Firebase configuration files (contain API keys and OAuth credentials)
+# Each developer should download their own from the Firebase Console
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Dart-define files (contain compile-time secrets)
+dart_defines/local.env
+dart_defines/*.local.env
+

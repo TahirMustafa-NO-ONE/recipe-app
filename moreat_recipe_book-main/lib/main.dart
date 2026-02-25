@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';  // Don't forget to import provider
 
 import '../services/user_state.dart';  // Import UserState
+import 'API_key.dart';               // Runtime validation of required keys
 
 import 'Screens/arecipe.dart';
 import 'Screens/bmi.dart';
@@ -19,6 +20,11 @@ import 'Screens/start.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Validate that all required secrets were provided via --dart-define.
+  // Fails fast in debug builds with a clear developer-facing message.
+  ApiKey.validate();
+
   await Firebase.initializeApp();
   runApp(
     ChangeNotifierProvider(
